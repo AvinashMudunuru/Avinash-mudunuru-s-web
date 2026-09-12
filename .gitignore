@@ -1,0 +1,14 @@
+# stuff i dont want to push to github
+
+# mac os files
+.DS_Store
+
+# windows files
+Thumbs.db
+
+# editor/vscode settings
+.vscode/
+
+# just in case i keep any random notes/test files here
+notes.txt
+test.html
