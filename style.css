@@ -18,6 +18,7 @@ a {
 a:hover {
   color: yellow;
 }
+
 .trail {
   position: absolute;
   width: 10px;
@@ -27,6 +28,7 @@ a:hover {
   pointer-events: none;
   animation: fade 0.5s linear;
 }
+
 .social a {
   display: inline-block;
   padding: 10px 20px;
@@ -42,6 +44,13 @@ a:hover {
   color: black;
 }
 
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid cyan;
+  margin-bottom: 20px;
+}
 
 @keyframes fade {
   from {opacity: 1;}
