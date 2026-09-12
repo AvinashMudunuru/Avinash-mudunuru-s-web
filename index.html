@@ -153,7 +153,34 @@ ul {
   0%, 100% { transform: translate(0,0) scale(1); }
   50% { transform: translate(-30px, 40px) scale(1.08); }
 }
+<script>
+// hides the navbar when scrolling down, brings it back when scrolling up
+(function () {
+  var nav = document.querySelector('.navbar');
+  var lastY = window.scrollY;
+  var ticking = false;
 
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        var currentY = window.scrollY;
+
+        if (currentY > lastY && currentY > 80) {
+          // scrolling down and past the hero area -> hide navbar
+          nav.classList.add('navHidden');
+        } else {
+          // scrolling up -> show navbar again
+          nav.classList.remove('navHidden');
+        }
+
+        lastY = currentY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
 /* grainy texture on top, makes it look less flat */
 .grain {
   position: fixed;
