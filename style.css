@@ -137,6 +137,10 @@ ul {
   background: rgba(6, 6, 8, 0.6);
   backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid var(--border1);
+  transition: transform 0.35s ease;
+}
+.navbar.navHidden {
+  transform: translateY(-100%);
 }
 .navInner {
   max-width: 1180px;
