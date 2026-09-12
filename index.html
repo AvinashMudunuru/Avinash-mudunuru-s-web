@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Avinash Varma Mudunuru — Systems, Interfaces, Discipline</title>
-<meta name="description" content="Avinash Varma Mudunuru — B.Tech CSIT student building AI systems, productivity frameworks, and front-end architecture from Andhra Pradesh, India.">
+<meta name="description" content="Avinash Varma Mudunuru — building AI systems, productivity frameworks, and front-end architecture from Andhra Pradesh, India.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -302,6 +302,175 @@ main { position: relative; z-index: 2; }
 }
 
 .hero-inner { max-width: 760px; }
+
+.hero-avatar {
+  position: relative;
+  width: 108px; height: 108px;
+  margin: 0 auto 32px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px -6px var(--glow-blue);
+}
+
+.hero-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--neon-blue), var(--electric-cyan), var(--deep-blue), var(--neon-blue));
+  animation: avatar-spin 6s linear infinite;
+  z-index: 0;
+}
+@keyframes avatar-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hero-avatar-img,
+.hero-avatar-fallback {
+  position: relative;
+  z-index: 1;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  background: var(--bg-elevated);
+}
+
+.hero-avatar-fallback {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--neon-blue);
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   EDUCATION TIMELINE
+   ========================================================= */
+.timeline {
+  position: relative;
+  max-width: 640px;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--neon-blue), transparent 95%);
+  opacity: 0.35;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-marker {
+  position: absolute;
+  left: -32px;
+  top: 22px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg-void);
+  border: 2px solid var(--neon-blue);
+  box-shadow: 0 0 12px 1px var(--glow-blue);
+}
+
+.timeline-card {
+  padding: 24px 26px;
+}
+
+.timeline-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--electric-cyan);
+  border: 1px solid var(--border-glass-strong);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-meta {
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   FAMILY GRID
+   ========================================================= */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.family-card {
+  padding: 30px 26px;
+  text-align: center;
+}
+
+.family-avatar {
+  display: grid;
+  place-items: center;
+  width: 56px; height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, rgba(0,210,255,0.16), rgba(10,99,255,0.1));
+  border: 1px solid var(--border-glass-strong);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--neon-blue);
+  position: relative;
+  z-index: 2;
+}
+
+.family-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.family-role {
+  font-size: 13px;
+  color: var(--electric-cyan);
+  font-weight: 500;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.family-detail {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
 
 .hero-eyebrow {
   font-size: 13.5px;
@@ -819,6 +988,7 @@ main { position: relative; z-index: 2; }
   .section { padding: 90px 22px; }
   .glass-grid { grid-template-columns: 1fr; }
   .connect-grid { grid-template-columns: 1fr; }
+  .family-grid { grid-template-columns: 1fr; }
   .hero { min-height: auto; padding: 150px 22px 90px; }
   .hero-stats { gap: 30px; }
 }
@@ -855,13 +1025,13 @@ main { position: relative; z-index: 2; }
     </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#console">Console</a>
-      <a href="#stack">Stack</a>
+      <a href="#education">Education</a>
+      <a href="#family">Family</a>
       <a href="#connect">Connect</a>
     </nav>
     <div class="header-status">
       <span class="status-dot" aria-hidden="true"></span>
-      <span>Kadapa, Andhra Pradesh — <span id="ist-clock">--:--:-- IST</span></span>
+      <span>Srungavarapukota, Andhra Pradesh — <span id="ist-clock">--:--:-- IST</span></span>
     </div>
   </div>
 </header>
@@ -871,39 +1041,20 @@ main { position: relative; z-index: 2; }
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
     <div class="hero-inner">
-      <p class="hero-eyebrow">B.Tech · CSIT · Lendi Institute of Engineering &amp; Technology</p>
+      <div class="hero-avatar">
+        <img src="profile.jpg" alt="Avinash Varma Mudunuru" class="hero-avatar-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="hero-avatar-fallback" aria-hidden="true">AV</span>
+      </div>
       <h1 class="hero-title">
         <span class="line">Avinash Varma</span>
         <span class="line hero-title-accent">Mudunuru</span>
       </h1>
       <p class="hero-sub">
-        First-year computer science student in Andhra Pradesh, wiring together
-        AI systems, disciplined productivity frameworks, and interfaces that feel
-        alive. I build the tools I need before I need them.
+        Based in Andhra Pradesh, wiring together AI systems, disciplined
+        productivity frameworks, and interfaces that feel alive. I build the
+        tools I need before I need them.
       </p>
-      <div class="hero-actions">
-        <a href="#console" class="btn btn-primary">
-          <span>Open the console</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#connect" class="btn btn-ghost">
-          <span>Find me elsewhere</span>
-        </a>
-      </div>
-      <dl class="hero-stats">
-        <div class="stat">
-          <dt>Target CGPA</dt>
-          <dd>9.5<span class="stat-unit">/10</span></dd>
-        </div>
-        <div class="stat">
-          <dt>Year</dt>
-          <dd>1<span class="stat-unit">st</span></dd>
-        </div>
-        <div class="stat">
-          <dt>Core focus</dt>
-          <dd class="stat-text">AI systems &amp; UI</dd>
-        </div>
-      </dl>
     </div>
     <div class="hero-scroll-cue" aria-hidden="true">
       <span></span>
@@ -932,8 +1083,8 @@ main { position: relative; z-index: 2; }
         <div class="glass-card-glow" aria-hidden="true"></div>
         <h3>Productivity frameworks</h3>
         <p>
-          College by 6:30, home by 6:10, every hour after accounted for. I treat
-          my own schedule like a system to engineer, not a habit to hope for.
+          Every hour of my day is accounted for. I treat my own schedule like
+          a system to engineer, not a habit to hope for.
         </p>
       </article>
 
@@ -958,55 +1109,76 @@ main { position: relative; z-index: 2; }
     </div>
   </section>
 
-  <!-- ============ CONSOLE ============ -->
-  <section class="section console-section" id="console">
+  <!-- ============ EDUCATION ============ -->
+  <section class="section education-section" id="education">
     <div class="section-head">
-      <h2>Ask the console</h2>
-      <p>A few commands, a few honest answers.</p>
+      <h2>Education</h2>
+      <p>The path so far, one stage at a time.</p>
     </div>
 
-    <div class="console-wrap">
-      <div class="console glass-card">
-        <div class="glass-card-glow" aria-hidden="true"></div>
-
-        <div class="console-titlebar">
-          <div class="console-dots" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-          <span class="console-path">avinash@lendi:~$</span>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-card glass-card">
+          <div class="glass-card-glow" aria-hidden="true"></div>
+          <span class="timeline-tag">Current</span>
+          <h3>Lendi Institute of Engineering and Technology</h3>
+          <p class="timeline-meta">B.Tech, CSIT Branch — 1st Year</p>
         </div>
-
-        <div class="console-body" id="console-body" role="log" aria-live="polite">
-          <p class="console-line console-line-system">Session started. Type a command or select one below.</p>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-card glass-card">
+          <div class="glass-card-glow" aria-hidden="true"></div>
+          <span class="timeline-tag">Intermediate</span>
+          <h3>Sri Vivekananda Junior College</h3>
+          <p class="timeline-meta">Intermediate education</p>
         </div>
-
-        <div class="console-commands" role="group" aria-label="Console commands">
-          <button type="button" class="cmd-btn" data-cmd="philosophy">/philosophy</button>
-          <button type="button" class="cmd-btn" data-cmd="focus">/focus</button>
-          <button type="button" class="cmd-btn" data-cmd="stack">/stack</button>
-          <button type="button" class="cmd-btn" data-cmd="whoami">/whoami</button>
+      </li>
+      <li class="timeline-item">
+        <div class="timeline-marker" aria-hidden="true"></div>
+        <div class="timeline-card glass-card">
+          <div class="glass-card-glow" aria-hidden="true"></div>
+          <span class="timeline-tag">10th Class</span>
+          <h3>Sri Gowri Vidyanikethan</h3>
+          <p class="timeline-meta">Secondary schooling</p>
         </div>
-      </div>
-    </div>
+      </li>
+    </ol>
   </section>
 
-  <!-- ============ STACK ============ -->
-  <section class="section stack-section" id="stack">
+  <!-- ============ FAMILY ============ -->
+  <section class="section family-section" id="family">
     <div class="section-head">
-      <h2>Currently building with</h2>
-      <p>The tools doing the heavy lifting this year.</p>
+      <h2>Family</h2>
+      <p>The people behind the discipline.</p>
     </div>
 
-    <ul class="stack-grid">
-      <li class="stack-chip"><span class="chip-dot"></span>HTML5 &amp; CSS3</li>
-      <li class="stack-chip"><span class="chip-dot"></span>JavaScript (ES6+)</li>
-      <li class="stack-chip"><span class="chip-dot"></span>Android app development</li>
-      <li class="stack-chip"><span class="chip-dot"></span>Adobe Express</li>
-      <li class="stack-chip"><span class="chip-dot"></span>Open-source tooling</li>
-      <li class="stack-chip"><span class="chip-dot"></span>No-code app systems</li>
-      <li class="stack-chip"><span class="chip-dot"></span>AI-assisted workflows</li>
-      <li class="stack-chip"><span class="chip-dot"></span>Applied mathematics <span class="chip-note">— in progress</span></li>
-    </ul>
+    <div class="family-grid">
+      <article class="family-card glass-card">
+        <div class="glass-card-glow" aria-hidden="true"></div>
+        <span class="family-avatar" aria-hidden="true">MS</span>
+        <h3>Mudunuru Srinivasaraju</h3>
+        <p class="family-role">Father</p>
+        <p class="family-detail">Works at Lendi Institute of Engineering and Technology as a driver.</p>
+      </article>
+
+      <article class="family-card glass-card">
+        <div class="glass-card-glow" aria-hidden="true"></div>
+        <span class="family-avatar" aria-hidden="true">MK</span>
+        <h3>Mudunuru Kavitha</h3>
+        <p class="family-role">Mother</p>
+        <p class="family-detail">Homemaker.</p>
+      </article>
+
+      <article class="family-card glass-card">
+        <div class="glass-card-glow" aria-hidden="true"></div>
+        <span class="family-avatar" aria-hidden="true">SR</span>
+        <h3>Shravan Raju</h3>
+        <p class="family-role">Younger brother</p>
+        <p class="family-detail">Studying at Sri Vivekananda Junior College.</p>
+      </article>
+    </div>
   </section>
 
   <!-- ============ CONNECT ============ -->
@@ -1089,7 +1261,7 @@ main { position: relative; z-index: 2; }
 
 <footer class="site-footer">
   <p>Avinash Varma Mudunuru — built line by line, not templated.</p>
-  <p class="footer-meta">Andhra Pradesh, India · <span id="year-now"></span></p>
+  <p class="footer-meta">&copy; <span id="year-now"></span> Avinash Varma Mudunuru. All rights reserved.</p>
 </footer>
 
 <script>
@@ -1203,105 +1375,7 @@ main { position: relative; z-index: 2; }
 })();
 
 /* ============================================================
-   2. CONSOLE / TYPING NARRATIVE
-   ============================================================ */
-(function console_widget() {
-  const body = document.getElementById('console-body');
-  const buttons = document.querySelectorAll('.cmd-btn');
-
-  const RESPONSES = {
-    philosophy: {
-      prompt: '/philosophy',
-      lines: [
-        "Discipline isn't a mood, it's a schedule I don't renegotiate with myself.",
-        "I'd rather be underestimated for a year than distracted for one.",
-        "Every system I build — for study, for code, for focus — is meant to outlast my motivation on a bad day."
-      ]
-    },
-    focus: {
-      prompt: '/focus',
-      lines: [
-        "Right now: holding a 9.5 CGPA while rebuilding my math from the ground up.",
-        "In parallel — AI systems, front-end architecture, and shipping small tools instead of just reading about them.",
-        "The rule is simple: syllabus first, curiosity second, distractions nowhere."
-      ]
-    },
-    stack: {
-      prompt: '/stack',
-      lines: [
-        "Foundations: HTML5, CSS3, modern JavaScript.",
-        "Building toward: Android app development and open-source contribution.",
-        "Design layer: Adobe Express, for sketching interfaces before a line of code exists.",
-        "Underneath all of it: AI-assisted workflows I'm learning to architect, not just consume."
-      ]
-    },
-    whoami: {
-      prompt: '/whoami',
-      lines: [
-        "Avinash Varma Mudunuru — first-year CSIT student, Lendi Institute of Engineering and Technology.",
-        "Based in Andhra Pradesh, India.",
-        "Building a disciplined path toward AI systems and interface engineering, one term at a time."
-      ]
-    }
-  };
-
-  let typing = false;
-
-  function typeLine(container, text, speed) {
-    return new Promise((resolve) => {
-      let i = 0;
-      const span = document.createElement('p');
-      span.className = 'console-line console-line-out';
-      container.appendChild(span);
-
-      span.classList.add('is-typing');
-
-      function tick() {
-        if (i < text.length) {
-          span.textContent = text.slice(0, i + 1);
-          i++;
-          container.scrollTop = container.scrollHeight;
-          setTimeout(tick, speed);
-        } else {
-          span.classList.remove('is-typing');
-          resolve();
-        }
-      }
-      tick();
-    });
-  }
-
-  async function runCommand(key) {
-    if (typing) return;
-    const data = RESPONSES[key];
-    if (!data) return;
-    typing = true;
-    buttons.forEach(b => b.setAttribute('aria-disabled', 'true'));
-
-    const promptLine = document.createElement('p');
-    promptLine.className = 'console-line console-line-prompt';
-    promptLine.textContent = 'avinash@lendi:~$ ' + data.prompt;
-    body.appendChild(promptLine);
-    body.scrollTop = body.scrollHeight;
-
-    await new Promise(r => setTimeout(r, 220));
-
-    for (const line of data.lines) {
-      await typeLine(body, line, 16);
-      await new Promise(r => setTimeout(r, 160));
-    }
-
-    typing = false;
-    buttons.forEach(b => b.removeAttribute('aria-disabled'));
-  }
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => runCommand(btn.dataset.cmd));
-  });
-})();
-
-/* ============================================================
-   3. LIVE CLOCK + FOOTER YEAR
+   2. LIVE CLOCK + FOOTER YEAR
    ============================================================ */
 (function clock() {
   const el = document.getElementById('ist-clock');
@@ -1322,7 +1396,7 @@ document.getElementById('year-now').textContent = new Date().getFullYear();
    4. SCROLL-REVEAL (single orchestrated pass, not per-card spam)
    ============================================================ */
 (function reveal() {
-  const targets = document.querySelectorAll('.section-head, .glass-card, .stack-chip, .connect-btn');
+  const targets = document.querySelectorAll('.section-head, .glass-card, .connect-btn, .timeline-item, .family-card');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
