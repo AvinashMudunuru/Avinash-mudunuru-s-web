@@ -1,12 +1,13 @@
 /* General body styling */
-body {
+ body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(270deg, #000000, #0f2027, #203a43, #2c5364);
-  background-size: 800% 800%;
-  animation: gradientMove 20s ease infinite;
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
   color: white;
   text-align: center;
+}
+
 }
 
 /* Gradient background animation */
