@@ -18,15 +18,29 @@ a {
 a:hover {
   color: yellow;
 }
+.qualities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 50px;
+}
 
-.trail {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: cyan;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: fade 0.5s linear;
+.card {
+  background: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  background: #222;
+  box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+  transform: translateY(-5px);
+}
+
+
 }
 
 .social a {
