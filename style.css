@@ -1,47 +1,55 @@
 /* General body styling */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: 
-    linear-gradient(270deg, rgba(0,0,0,0.6), rgba(0,255,255,0.2)),
-    url("background.jpg") no-repeat center center fixed;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
   background-size: cover;
   color: white;
   text-align: center;
 }
-/* Gradient background animation */
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+
+/* Navigation bar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
 }
 
-/* Section styling */
-section {
-  padding: 100px 20px;
-}
-
-/* Links */
-a {
+nav a {
   color: cyan;
   text-decoration: none;
-  margin: 10px;
+  font-weight: bold;
+  transition: 0.3s;
 }
-a:hover {
+
+nav a:hover {
   color: yellow;
 }
 
-/* Social buttons */
-.social a {
-  display: inline-block;
+/* Headings */
+h1, h2, h3 {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
   padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
   background: cyan;
   color: black;
-  border-radius: 5px;
-  margin: 5px;
+  font-weight: bold;
+  cursor: pointer;
   transition: 0.3s;
 }
-.social a:hover {
+
+button:hover {
   background: yellow;
   color: black;
 }
