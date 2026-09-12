@@ -17,9 +17,9 @@
 Building a platform/tool aimed at helping B.Tech students simplify and organize their studies.
 
 ## 📫 Connect with Me
-- GitHub: [Add your GitHub link here]
-- LinkedIn: [Add your LinkedIn link here]
-- Email: [Add your email here]
+- GitHub: 
+- LinkedIn: https://www.linkedin.com/in/mudunuru-avinash-varma-810555436?utm_source=share_via&utm_content=profile&utm_medium=member_android
+- Email: avinashmudunuru@icloud.com.
 
 ---
 ⭐️ Thanks for visiting my profile!
