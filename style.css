@@ -18,3 +18,17 @@ a {
 a:hover {
   color: yellow;
 }
+.trail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: cyan;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fade 0.5s linear;
+}
+
+@keyframes fade {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
