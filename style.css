@@ -1,15 +1,14 @@
 /* General body styling */
- body {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url("background.jpg") no-repeat center center fixed;
+  background: 
+    linear-gradient(270deg, rgba(0,0,0,0.6), rgba(0,255,255,0.2)),
+    url("background.jpg") no-repeat center center fixed;
   background-size: cover;
   color: white;
   text-align: center;
 }
-
-}
-
 /* Gradient background animation */
 @keyframes gradientMove {
   0% {background-position: 0% 50%;}
