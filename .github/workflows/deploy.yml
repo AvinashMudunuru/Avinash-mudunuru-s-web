@@ -2,11 +2,13 @@ name: Deploy Portfolio
 
 on:
   push:
-    branches: [ "main" ]   # or master if that's your default
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NODE_NO_WARNINGS: 1   # ✅ Suppress warnings
 
     steps:
       - name: Checkout repo
@@ -16,10 +18,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-
-      - name: Build static site
-        run: |
-          echo "No build step needed for static HTML/CSS/JS"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -33,7 +31,9 @@ jobs:
       pages: write
       id-token: write
     environment:
-      name: github-pages   # ✅ REQUIRED
+      name: github-pages
+    env:
+      NODE_NO_WARNINGS: 1   # ✅ Suppress warnings
 
     steps:
       - name: Deploy
