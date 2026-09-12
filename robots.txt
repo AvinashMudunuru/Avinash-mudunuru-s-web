@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://avinashmudunuru.github.io/Avinashmudunuru/sitemap.xml
