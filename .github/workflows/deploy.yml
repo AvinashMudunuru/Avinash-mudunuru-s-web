@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "No build step needed for static HTML/CSS/JS"
 
-      - name: Deploy to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
@@ -32,6 +32,8 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    environment:
+      name: github-pages   # ✅ REQUIRED
 
     steps:
       - name: Deploy
