@@ -29,6 +29,22 @@
   --font2: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
 }
 
+/* if the persons phone/computer is set to light mode, use these colors instead */
+/* this is called "system theme" - it just checks the device setting automatically */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg1: #f4f7fa;
+    --bg2: #ffffff;
+    --cardbg: rgba(255, 255, 255, 0.7);
+    --border1: rgba(10, 40, 60, 0.12);
+    --border2: rgba(10, 40, 60, 0.22);
+
+    --txt1: #0b1721;
+    --txt2: #3d525f;
+    --txt3: #6b7d88;
+  }
+}
+
 /* basic reset, saw this online */
 * {
   box-sizing: border-box;
@@ -138,6 +154,11 @@ ul {
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+/* the grain and blobs look too strong on a white background so tone them down a bit */
+@media (prefers-color-scheme: light) {
+  .grain { opacity: 0.02; }
+  .blob { opacity: 0.25; }
+}
 
 /* NAVBAR */
 .navbar {
@@ -225,7 +246,14 @@ ul {
   50% { opacity: 0.35; }
 }
 @media (max-width: 820px) {
-  .navLinks { display: none; }
+  .navInner { flex-wrap: wrap; row-gap: 10px; }
+  .navLinks {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
   .clockBox span:first-of-type { display: none; }
 }
 
@@ -703,8 +731,12 @@ footer {
 }
 @media (max-width: 480px) {
   .navInner { padding: 14px 18px; }
+  .navLinks { gap: 12px; font-size: 13px; }
+  .logoText { font-size: 14px; }
   .connectBtn { padding: 18px; }
   .connIcon { width: 40px; height: 40px; }
+  .heroTitle { font-size: 40px; }
+  .heroSub { font-size: 15.5px; }
 }
 
 </style>
@@ -992,8 +1024,9 @@ footer {
   var mouseX = null, mouseY = null, mouseIsOn = false;
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
 
-  var dotColor = '0, 210, 255';
+  var dotColor = isLightMode ? '10, 90, 140' : '0, 210, 255';
   var lineDist = 130;
   var mouseDist = 160;
   var speed = 0.18;
