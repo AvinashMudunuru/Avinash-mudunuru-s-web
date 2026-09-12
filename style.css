@@ -65,6 +65,38 @@ a:hover {
   border: 3px solid cyan;
   margin-bottom: 20px;
 }
+.card {
+  background: #111;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  /* Fade-in animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  background: #222;
+  box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+  transform: translateY(-5px);
+}
+
 
 @keyframes fade {
   from {opacity: 1;}
